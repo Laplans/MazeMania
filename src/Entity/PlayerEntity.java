@@ -24,11 +24,6 @@ public class PlayerEntity extends Entity{
         super.move(delta);
     }
     
-    @Override
-    public void collidedWith(Entity other){
-        
-     
-    }
     
     
 }
