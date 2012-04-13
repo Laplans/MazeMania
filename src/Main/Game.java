@@ -25,7 +25,7 @@ public class Game{
     
     private TextureLoader textureLoader;
     
-    private ArrayList<Entity> entities = new ArrayList<Entity>();
+    public ArrayList<Entity> entities = new ArrayList<Entity>();
     
     private long lastLoopTime = getTime();
     
@@ -121,8 +121,8 @@ public class Game{
         entities.add(mazeobject);
         mazeobject = new MazeEntity(this,"Images/Parts/6.Top_Right.jpg" ,200,300);
         entities.add(mazeobject);
-       // player = new PlayerEntity(this,"Images/player.jpg",250,210);
-        //entities.add(player);
+        player = new PlayerEntity(this,"Images/player.jpg",250,210);
+        entities.add(player);
     }
     
     private void gameLoop(){
@@ -141,8 +141,8 @@ public class Game{
     }
     
     public void checkInput(){
-//        player.setVerticalMovement(0);
-      //  player.setHorizontalMovement(0);
+        player.setVerticalMovement(0);
+        player.setHorizontalMovement(0);
         
         boolean left = hasInput(Keyboard.KEY_LEFT);
         boolean right = hasInput(Keyboard.KEY_RIGHT);

@@ -5,6 +5,7 @@
 package Texture;
 
 
+import java.awt.image.BufferedImage;
 import java.nio.ByteBuffer;
 import static org.lwjgl.opengl.GL11.*;
 /**
@@ -16,6 +17,8 @@ public class Sprite {
     /** Texture that stores the sprite */
     private Texture texture;
     
+    private BufferedImage img;
+    
     /** Width in pixels */
     private int width;
     
@@ -25,12 +28,22 @@ public class Sprite {
     public Sprite (TextureLoader loader, String ref){
         try{
             texture = loader.getTexture(ref);
+            img = loader.loadImage(ref);
             width = texture.getImageWidth();
             height = texture.getImageHeight();
         } catch(Exception e){
             System.out.println("SPRITE");
             e.printStackTrace();
             System.exit(-1);
+        }
+    }
+    
+    public boolean isWhiteOrBlack(int a, int b){
+        int i = img.getRGB(a, b);
+        if(i == -1){
+          return false;  
+        }else{
+          return true;
         }
     }
     

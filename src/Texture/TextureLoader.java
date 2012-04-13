@@ -155,7 +155,7 @@ public class TextureLoader {
         g.setColor(new Color(0f,0f,0f,0f));
         g.fillRect(0, 0, texWidth, texHeight);
         g.drawImage(bufferedImage, 0, 0, null);
-                        
+                               
         byte[] data = ((DataBufferByte) texImage.getRaster().getDataBuffer()).getData();
         
         imageBuffer = ByteBuffer.allocateDirect(data.length);
@@ -165,7 +165,7 @@ public class TextureLoader {
         return imageBuffer;
     }
     
-    private BufferedImage loadImage(String ref) throws IOException{  
+    public BufferedImage loadImage(String ref) throws IOException{  
         URL url = TextureLoader.class.getClassLoader().getResource(ref);
         if(url == null){
             throw new IOException("Cannot find: " + ref);
