@@ -26,11 +26,14 @@ public class PlayerEntity extends Entity{
             if(game.entities.get(i).collidesWith(this) && !game.entities.get(i).equals(this)){
                 entity = game.entities.get(i);
                 if(entity.sprite.isWhiteOrBlack((int)x -(int)entity.x,(int)y-(int)entity.y)){
-                    dx=0;
-                    dy=0;
+                    dx = oldx - x;
+                    dy = oldy - y;
                 }
+                oldx = x;
+                oldy = y;
+                super.move(delta);
+               
             }
         }
-        super.move(delta);
     }    
 }

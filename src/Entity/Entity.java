@@ -17,6 +17,10 @@ public abstract class Entity {
     
     protected float y;
     
+    protected float oldx;
+    
+    protected float oldy;
+    
     protected Sprite sprite;
     
     protected float dx;
