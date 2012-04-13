@@ -121,12 +121,6 @@ public class Game{
         entities.add(mazeobject);
         mazeobject = new MazeEntity(this,"Images/Parts/6.Top_Right.jpg" ,200,300);
         entities.add(mazeobject);
-        mazeobject = new MazeEntity(this,"Images/Parts/5.Top_Left.jpg" ,400,300);
-        entities.add(mazeobject);
-        mazeobject = new MazeEntity(this,"Images/Parts/1.Horizontal.jpg" ,300,300);
-        entities.add(mazeobject);
-        mazeobject = new MazeEntity(this,"Images/Parts/7.Bottom_T.jpg" ,400,200);
-        entities.add(mazeobject);
         player = new PlayerEntity(this,"Images/player.jpg",250,210);
         entities.add(player);
     }
