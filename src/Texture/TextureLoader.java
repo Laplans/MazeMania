@@ -92,7 +92,7 @@ public class TextureLoader {
         BufferedImage bufferedImage = loadImage(resourceName);
         texture.setWidth(bufferedImage.getWidth());
         texture.setHeight(bufferedImage.getHeight());
-        
+               
         if(bufferedImage.getColorModel().hasAlpha()){
             srcPixelFormat = GL_RGBA;
         } else {
@@ -155,7 +155,7 @@ public class TextureLoader {
         g.setColor(new Color(0f,0f,0f,0f));
         g.fillRect(0, 0, texWidth, texHeight);
         g.drawImage(bufferedImage, 0, 0, null);
-        
+                        
         byte[] data = ((DataBufferByte) texImage.getRaster().getDataBuffer()).getData();
         
         imageBuffer = ByteBuffer.allocateDirect(data.length);

@@ -5,6 +5,7 @@
 package Texture;
 
 
+import java.nio.ByteBuffer;
 import static org.lwjgl.opengl.GL11.*;
 /**
  *
@@ -47,7 +48,7 @@ public class Sprite {
         texture.bind();
         
         glTranslatef(x,y,0);
-        
+             
         glBegin(GL_QUADS);
         {
             glTexCoord2f(0,0);
