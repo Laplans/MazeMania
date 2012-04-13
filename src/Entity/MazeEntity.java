@@ -20,10 +20,4 @@ public class MazeEntity extends Entity {
         this.game = game;
     }
     
-    @Override
-    public void collidedWith(Entity other){
-        if(other instanceof MazeEntity){
-            System.out.println("COLLISIONNNNN");
-        }
-    }
 }

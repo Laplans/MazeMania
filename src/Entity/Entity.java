@@ -72,11 +72,4 @@ public abstract class Entity {
         return (int) y;
     }
     
-    public boolean collidesWith(Entity other){
-        me.setBounds((int) x, (int) y, sprite.getWidth(), sprite.getHeight());
-        him.setBounds((int) other.x, (int) other.y, other.sprite.getWidth(), other.sprite.getHeight());
-        return me.intersects(him);
-    }
-    
-    public abstract void collidedWith (Entity other);
 }
