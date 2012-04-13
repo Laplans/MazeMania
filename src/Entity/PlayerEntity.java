@@ -21,18 +21,19 @@ public class PlayerEntity extends Entity{
     }
     
     @Override
-    public void move(long delta){
+    public void move(){
         for (int i = 0; i < game.entities.size(); i++) {
             if(game.entities.get(i).collidesWith(this) && !game.entities.get(i).equals(this)){
                 entity = game.entities.get(i);
-                if(entity.sprite.isWhiteOrBlack((int)x -(int)entity.x,(int)y-(int)entity.y)){
-                    dx = oldx - x;
-                    dy = oldy - y;
-                }
-                oldx = x;
-                oldy = y;
-                super.move(delta);
-               
+                if((int)dx == 1){
+                    if(!entity.sprite.isWhiteOrBlack((int)x+ (int)dx -(int)entity.x,(int)y + (int)dy-(int)entity.y,true)){
+                        super.move();
+                    }
+                }else{
+                    if(!entity.sprite.isWhiteOrBlack((int)x+ (int)dx -(int)entity.x,(int)y + (int)dy-(int)entity.y,false)){
+                        super.move();
+                    }
+                }             
             }
         }
     }    

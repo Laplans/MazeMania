@@ -38,8 +38,13 @@ public class Sprite {
         }
     }
     
-    public boolean isWhiteOrBlack(int a, int b){
-        int i = img.getRGB(a, b);
+    public boolean isWhiteOrBlack(int a, int b, boolean isDiff){
+        int i;
+        if(isDiff){
+             i = img.getRGB(a+4, b);
+        }else{
+             i = img.getRGB(a, b);
+        }
         if(i == -1){
           return false;  
         }else{

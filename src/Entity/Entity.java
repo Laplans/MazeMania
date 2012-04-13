@@ -17,10 +17,6 @@ public abstract class Entity {
     
     protected float y;
     
-    protected float oldx;
-    
-    protected float oldy;
-    
     protected Sprite sprite;
     
     protected float dx;
@@ -37,7 +33,7 @@ public abstract class Entity {
         this.y = y;
     }
     
-    public void move(long delta){
+    public void move(){
         //x += (delta * dx) / 1000;
         //y += (delta * dy) / 1000;
         x += dx;
@@ -79,6 +75,6 @@ public abstract class Entity {
     public boolean collidesWith(Entity other){
         me.setBounds((int)x,(int)y,sprite.getWidth(),sprite.getHeight());
         him.setBounds((int)other.x,(int)other.y,other.sprite.getWidth(),other.sprite.getHeight());
-        return me.intersects(him);     
+        return me.intersects(him);
     }
 }

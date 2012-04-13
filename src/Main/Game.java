@@ -121,7 +121,7 @@ public class Game{
         entities.add(mazeobject);
         mazeobject = new MazeEntity(this,"Images/Parts/6.Top_Right.jpg" ,200,300);
         entities.add(mazeobject);
-        player = new PlayerEntity(this,"Images/player.jpg",250,210);
+        player = new PlayerEntity(this,"Images/player.jpg",250,310);
         entities.add(player);
     }
     
@@ -172,7 +172,7 @@ public class Game{
 
         
         for(Entity entity : entities){
-            entity.move(lastFpsTime);
+            entity.move();
             entity.draw();
         }
         
