@@ -22,19 +22,16 @@ public class PlayerEntity extends Entity{
     
     @Override
     public void move(){
+        int a = 0;
         for (int i = 0; i < game.entities.size(); i++) {
             if(game.entities.get(i).collidesWith(this) && !game.entities.get(i).equals(this)){
+                a++;
                 entity = game.entities.get(i);
-                if((int)dx == 1){
-                    if(!entity.sprite.isWhiteOrBlack((int)x+ (int)dx -(int)entity.x,(int)y + (int)dy-(int)entity.y,true)){
-                        super.move();
-                    }
-                }else{
-                    if(!entity.sprite.isWhiteOrBlack((int)x+ (int)dx -(int)entity.x,(int)y + (int)dy-(int)entity.y,false)){
-                        super.move();
-                    }
-                }             
+                if(!entity.sprite.isWhiteOrBlack((int)x + (int)dx -(int)entity.x,(int)y + (int)dy-(int)entity.y)){
+                    super.move();
+                }     
             }
         }
+        System.out.println("times= " + a);
     }    
 }

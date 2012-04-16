@@ -5,6 +5,7 @@
 package Texture;
 
 
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.nio.ByteBuffer;
 import static org.lwjgl.opengl.GL11.*;
@@ -38,17 +39,19 @@ public class Sprite {
         }
     }
     
-    public boolean isWhiteOrBlack(int a, int b, boolean isDiff){
+    public boolean isWhiteOrBlack(int a, int b){
+        System.out.println("a= " + a);
+        System.out.println("b= " + b);
         int i;
-        if(isDiff){
-             i = img.getRGB(a+4, b);
-        }else{
-             i = img.getRGB(a, b);
-        }
-        if(i == -1){
-          return false;  
-        }else{
-          return true;
+        try{
+            i = img.getRGB(a+2, b+2);
+            if(i == -1){
+                return false;  
+            }else{
+                return true;
+            }
+        }catch(Exception e){
+            return true;
         }
     }
     

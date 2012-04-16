@@ -117,11 +117,13 @@ public class Game{
     private void initEntities(){
         Entity mazeobject = new MazeEntity(this,"Images/Parts/11.Four_Way.jpg" ,200,200);
         entities.add(mazeobject);
-        mazeobject = new MazeEntity(this,"Images/Parts/1.Horizontal.jpg" ,300,200);
+        mazeobject = new MazeEntity(this,"Images/Parts/11.Four_Way.jpg" ,300,200);
         entities.add(mazeobject);
-        mazeobject = new MazeEntity(this,"Images/Parts/6.Top_Right.jpg" ,200,300);
+        mazeobject = new MazeEntity(this,"Images/Parts/11.Four_Way.jpg" ,200,300);
         entities.add(mazeobject);
-        player = new PlayerEntity(this,"Images/player.jpg",250,310);
+        mazeobject = new MazeEntity(this,"Images/Parts/11.Four_Way.jpg" ,300,300);
+        entities.add(mazeobject);
+        player = new PlayerEntity(this,"Images/player.jpg",310,250);
         entities.add(player);
     }
     
