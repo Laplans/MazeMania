@@ -40,8 +40,6 @@ public class Sprite {
     }
     
     public boolean isWhiteOrBlack(int a, int b){
-        System.out.println("a= " + a);
-        System.out.println("b= " + b);
         int i;
         try{
             i = img.getRGB(a+2, b+2);

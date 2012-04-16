@@ -10,29 +10,28 @@ import Main.Game;
  *
  * @author kevintjeerdsma
  */
-public class PlayerEntity extends Entity{
+public class ShotEntity extends Entity{
     
+    private float moveSpeed = 3;
     private Game game;
-    private Entity entity;
-    private ShotEntity shot;
+    private boolean used;
+    public Entity entity;
     
-    public PlayerEntity(Game game, String ref, int x, int y){
-        super(game.getSprite(ref), x, y);
+    public ShotEntity(Game game, String sprite, int x, int y){
+        super(game.getSprite(sprite),x,y);
+        
         this.game = game;
+        dy = moveSpeed;
     }
     
-    public void fire(){
-        if(shot == null){
-            System.out.println("shot!");
-            shot = new ShotEntity(game,"Images/shot.jpg",(int)x+(int)dx,(int)y+(int)dy);
-            game.entities.add(shot);
-        }else{
-            shot.reinitialize((int)x+(int)dx,(int)y+(int)dy);
-        }
+    public void reinitialize(int x, int y){
+        this.x=x;
+        this.y=y;
+        used = false;
     }
     
-    @Override
     public void move(){
+        super.move();
         for (int i = 0; i < game.entities.size(); i++) {
             if(game.entities.get(i).collidesWith(this) && !game.entities.get(i).equals(this)){
                 entity = game.entities.get(i);
@@ -41,5 +40,5 @@ public class PlayerEntity extends Entity{
                 }     
             }
         }
-    }    
+    }
 }

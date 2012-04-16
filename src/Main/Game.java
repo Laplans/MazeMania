@@ -150,11 +150,13 @@ public class Game{
         boolean right = hasInput(Keyboard.KEY_RIGHT);
         boolean down = hasInput(Keyboard.KEY_DOWN);
         boolean up = hasInput(Keyboard.KEY_UP);
+        boolean space = hasInput(Keyboard.KEY_SPACE);
         
         if((left) && (!right))player.setHorizontalMovement(-1);
         if((!left) && (right))player.setHorizontalMovement(1);
         if((up) && (!down))player.setVerticalMovement(-1);
         if((!up) && (down))player.setVerticalMovement(1);
+        if(space) player.fire();
     }
     
     public void frameRendering(){
@@ -214,6 +216,9 @@ public class Game{
             case Keyboard.KEY_UP:
                 return
                         Keyboard.isKeyDown(Keyboard.KEY_UP);
+            case Keyboard.KEY_SPACE:
+                return
+                        Keyboard.isKeyDown(Keyboard.KEY_SPACE);
         }
         return false;
     }
